@@ -6,6 +6,11 @@ elForm.addEventListener("submit", function (evt) {
 
   var inputTemperature = parseFloat(elForm.querySelector(".input-temperature").value.trim(),10);
 
+  if (inputTemperature === "" || isNaN(inputTemperature)) {
+    alert("Iltimos son kiriting :)")
+    return;
+  }
+
   var farengeyTemperature = (inputTemperature * 9/5) + 32;
   addFarengeyTemperature.textContent = farengeyTemperature;
 })
